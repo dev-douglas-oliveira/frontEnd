@@ -4,12 +4,14 @@
 body {
 	text-transform: uppercase;
 }
-
 </style>
 </head>
 <body>
 	<!-- Mini Curso front-end -->
-	<form action="">
+	<form action="salvarUsuario" method="post"
+		onsubmit="return validarDados()? true : false">
+
+		<!-- method post para não exibir dados preenchidos do formulario na barra de endereços -->
 		<!-- Formúlario -->
 
 		<table style="background-color: #1E90FF">
@@ -41,5 +43,26 @@ body {
 
 		</table>
 	</form>
+	<script type="text/javascript">
+		function validarDados() {
+			var nome = document.getElementById("nome").value;
+			var login = document.getElementById("login").value;
+			var senha = document.getElementById("senha").value;
+			if (nome == "") {
+				alert('Informe o nome!');
+				return false;
+
+			} else if (login == "") {
+				alert('Informe o login!');
+				return false;
+
+			} else if (senha == "") {
+				alert('Informe a senha!');
+				return false;
+			}
+			return true
+		}
+	</script>
+
 </body>
 </html>
